@@ -1,0 +1,83 @@
+<div class="container">
+<div class="row header margin-10">
+  <div class="header-register">Sign Up
+  </div>
+</div>
+<div class="outset-border">
+    <form [formGroup]="rForm" (Submit)="onRegister(rForm.value)">
+    <div class="margin-top-5">
+    Your Name:
+    <input class="form-control input-shadow form-element-pad" 
+    placeholder="eg: myfirstname mylastname" formControlName='name'/>
+    </div>
+    <div class="my-alert" *ngIf = "!rForm.controls['name'].valid && rForm.controls['name'].touched">
+      {{ alertMsg }}
+    </div>
+    <div class="margin-top-5">
+    Your Age:
+    <input class="form-control input-shadow form-element-pad" 
+    placeholder="eg: 25" formControlName='age'/>
+    </div>
+    <div class="my-alert" *ngIf = "!rForm.controls['age'].valid && rForm.controls['age'].touched">
+      {{ alertMsg }}
+    </div>
+    <div class="margin-top-2">
+    Marital Status:
+    <input type="radio" value="Married"  class="cursor" formControlName='marital'/>Married
+    <input type="radio" value="Unmarried" class="cursor" formControlName='marital'/>Unmarried
+    </div>
+    <div class="margin-top-5">
+    Your Phone Number:
+    <input class="form-control input-shadow form-element-pad" 
+    placeholder="eg: 12345xxxxx" formControlName='phNb'/>
+    </div>
+    <div class="my-alert" *ngIf = "!rForm.controls['phNb'].valid && rForm.controls['phNb'].touched">
+      {{ alertMsg }}
+    </div>
+    <div class="margin-top-5">
+    Your Email Id:
+    <input class="form-control input-shadow form-element-pad" 
+    placeholder="eg: myemail@email.com" formControlName='emailId'/>
+    </div>
+    <div class="my-alert" *ngIf = "!rForm.controls['emailId'].valid && rForm.controls['emailId'].touched">
+      {{ alertMsg }}
+    </div>
+    <div class="margin-top-5">
+    Your Password:
+    <input type = "password" class="form-control input-shadow form-element-pad" 
+    placeholder="eg: Mysuperp@sw0rd" formControlName='password'/>
+    </div>
+    <div class="my-alert" *ngIf = "!rForm.controls['password'].valid && rForm.controls['password'].touched">
+      {{ alertMsg }}
+    </div>
+    <div class="margin-top-5">
+    Confirm Your Password:
+    <input type = "password" class="form-control input-shadow form-element-pad" 
+    placeholder="eg: Mysuperp@sw0rd" formControlName='cnfpassword'/>
+    </div>
+    <div class="my-alert" *ngIf = "!rForm.controls['cnfpassword'].valid && rForm.controls['cnfpassword'].touched">
+      {{ alertMsg }}
+    </div>
+    <div>
+      Your Interests:
+    <select class="form-control input-shadow form-element-pad" value="Select Your Interests" 
+    formControlName='interests'>
+            <option value="cheese">Music</option>
+            <option value="tomatoes">Disco</option>
+            <option value="mozarella">Mozzarella</option>
+            <option value="mushrooms">Mushrooms</option>
+            <option value="pepperoni">Pepperoni</option>
+            <option value="onions">Onions</option>
+      </select>
+    </div>
+    <div>
+    <button type="reset" class="btn btn-danger reset-btn cursor">Reset Form</button>
+    <button type="submit" class="btn btn-success register-btn cursor" [disabled]="!rForm.valid" 
+    >Sign Up</button>
+    </div>
+  </form>
+  <div class="login-link">
+    Already a Member? <a routerLink="/login">Go and Login</a>
+  </div>
+</div>
+</div>

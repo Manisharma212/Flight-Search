@@ -1,0 +1,42 @@
+<div class="container outer-box">
+  <div class="body-title">
+    Search Flights
+  </div>
+  <div> 
+    <form>
+      <div class="row">
+      <input class="form-control input-shadow col-sm-4" placeholder="From: City or Airport"/>
+      <img src="../../assets/images/reversible.png" alt="reverse" class="reverse-img">
+      <input class="form-control input-shadow col-sm-4" placeholder="To: City or Airport"/>
+      <button class="btn btn-success col-sm-2 search-btn">Go Fetch</button>
+      </div>
+    </form>
+    <div>
+      <table class="table table-striped flight-table" *ngIf="flights.length>0 ;else noFlights">
+        <thead>
+          <tr class="row">
+            <td class="col-sm-2">Airlines</td>
+            <td class="col-sm-2 table-element">Departure</td>
+            <td class="col-sm-2 table-element">Duration</td>
+            <td class="col-sm-2 table-element">Arrival</td>
+            <td class="col-sm-2">Price</td>         
+          </tr>
+        </thead>
+        <tbody class="tbody-size">
+           <tr class="row" *ngFor="let flight of flights">
+            <td class="col-sm-2">{{ flight.airlines }}</td>
+            <td class="col-sm-2 table-element">{{ flight.departure }}</td>
+            <td class="col-sm-2 table-element">{{ flight.duration }}</td>
+            <td class="col-sm-2 table-element">{{ flight.arrival }}</td>
+            <td class="col-sm-2"><img src="../../assets/images/rupeeSymbol.png" alt="rupee-symbol" class="img-width">
+            {{ flight.price }}</td>         
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noFlights >
+         <p class="no-flight">Please Search For Flights to view Details...</p>
+      </ng-template>
+    </div>
+  </div>    
+</div>
+  

@@ -1,0 +1,47 @@
+<div class="container">
+<div class="row header margin-top-5">
+  <div class="header-login">Login<span class="arrow-down"></span>
+  </div>
+</div>
+<div class="outset-border">
+  <div class="font-Style">
+    <strong>Login Using Social Network</strong>
+  </div>
+  <div class="social-group">
+    <img src="../../assets/images/facebook-login.png" alt="Facebook-Login" class="cursor" (click)="signInWithFB()">
+    <img src="../../assets/images/google-login.png" alt="Google-Login" class="cursor" (click)="signInWithGoogle()">
+    <button (click)="signOut()">Logout</button>
+  </div>
+  <div class="margin-10">
+    <hr>
+   
+  </div>
+  <div class="font-Style margin-top-5">
+  <strong>Login Manually</strong>
+  </div>
+  <form>
+    <div class="margin-top-5">
+    Email or Phone
+    <input class="form-control input-shadow" placeholder="myusername or 12345xxxxx"/>
+    </div>
+    <div class="margin-top-5">
+    Password
+    <input class="form-control input-shadow" placeholder="mysuperpassword"/>
+    </div>
+    <div class="margin-top-5">
+    <input class="check-box cursor" type="checkbox" value="" />Keep me logged in
+    </div>
+    <div>
+    <button type="submit" class="btn btn-success login-btn cursor">Login</button>
+    </div>
+    <div class="member-display">
+    Not a member yet? <a routerLink="/register">Join us</a>
+    </div>
+  </form>
+  <img class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
+    <div class="card-block">
+      <h4 class="card-title">{{ user.name }}</h4>
+      <p class="card-text">{{ user.email }}</p>
+    </div>
+</div>
+</div>

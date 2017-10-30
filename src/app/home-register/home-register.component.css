@@ -1,0 +1,14 @@
+.header-login{
+    background-image: url("../../assets/images/header-background.png"); 
+        margin-left: -10%;
+    margin-right: -10%;
+    padding: 1%;
+    font-style: italic;
+}
+.login-form{
+     background-image: url("../../assets/images/login-background.jpg"); 
+     height: auto;
+}
+.margin-left-5{
+    margin-left: 5%;
+}
